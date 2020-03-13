@@ -6,6 +6,14 @@ Grade = [
     ('average', 0),
     ('bad', -1)
 ]
+
+
+Country = [
+    ('kenya', 0),
+    ('uganda', 1),
+    ('tanzania', 2)
+]
+
 # DataFlair
 class DRFPost(models.Model):
     name = models.CharField(max_length = 100)
@@ -16,3 +24,16 @@ class DRFPost(models.Model):
         ordering = ['uploaded']
     def __str__(self):
         return self.name
+
+
+class DRFUser(models.Model):
+    firstName = models.CharField(max_length = 100)
+    lastname = models.CharField(max_length = 100)
+    email = models.CharField(max_length = 100)
+    age = models.CharField(max_length = 100)
+    telephone = models.CharField(max_length = 100)
+    country = models.CharField(choices = Country, default = 'kenya', max_length = 50)
+    class Meta:
+        ordering = ['firstName']
+    def __str__(self):
+        return self.firstName        

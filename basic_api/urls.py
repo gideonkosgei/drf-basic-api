@@ -6,5 +6,10 @@ from basic_api import views
 urlpatterns = [
     path('basic/', views.API_objects.as_view()),
     path('basic/<int:pk>/', views.API_objects_details.as_view()),
+    path('user/', views.API_objects_DRFUser.as_view()),
+    path('user/<int:pk>/', views.API_objects_details_DRFUser.as_view()),
 ]
 urlpatterns = format_suffix_patterns(urlpatterns)
+
+
+    
